@@ -1,0 +1,187 @@
+Last login: Sat Mar  9 10:44:59 on ttys000
+hamaiyurikonoMacBook-puro:~ ryota$ pwd
+/Users/ryota
+hamaiyurikonoMacBook-puro:~ ryota$ ls
+Desktop		Downloads	Movies		Pictures	lesson-cui
+Documents	Library		Music		Public
+hamaiyurikonoMacBook-puro:~ ryota$ cd Desktop
+hamaiyurikonoMacBook-puro:Desktop ryota$ pwd
+/Users/ryota/Desktop
+hamaiyurikonoMacBook-puro:Desktop ryota$ ls
+Lesson-cui	lesson
+hamaiyurikonoMacBook-puro:Desktop ryota$ mkdir git_train
+hamaiyurikonoMacBook-puro:Desktop ryota$ cd
+.DS_Store   .localized  Lesson-cui/ git_train/  lesson/
+hamaiyurikonoMacBook-puro:Desktop ryota$ cd git_train/
+hamaiyurikonoMacBook-puro:git_train ryota$ ls
+hamaiyurikonoMacBook-puro:git_train ryota$ ls -a
+.	..
+hamaiyurikonoMacBook-puro:git_train ryota$ cd .
+hamaiyurikonoMacBook-puro:git_train ryota$ cd ..
+hamaiyurikonoMacBook-puro:Desktop ryota$ ls
+Lesson-cui	git_train	lesson
+hamaiyurikonoMacBook-puro:Desktop ryota$ cd ../Desktop/
+hamaiyurikonoMacBook-puro:Desktop ryota$ cd git_train/
+hamaiyurikonoMacBook-puro:git_train ryota$ mkdir a
+hamaiyurikonoMacBook-puro:git_train ryota$ mkdir b
+hamaiyurikonoMacBook-puro:git_train ryota$ cd a
+hamaiyurikonoMacBook-puro:a ryota$ cd c
+-bash: cd: c: No such file or directory
+hamaiyurikonoMacBook-puro:a ryota$ mkdir c
+hamaiyurikonoMacBook-puro:a ryota$ cd c
+hamaiyurikonoMacBook-puro:c ryota$ mkdir d
+hamaiyurikonoMacBook-puro:c ryota$ cd d
+hamaiyurikonoMacBook-puro:d ryota$ cd ..
+hamaiyurikonoMacBook-puro:c ryota$ cd d
+hamaiyurikonoMacBook-puro:d ryota$ cd ../../..
+hamaiyurikonoMacBook-puro:git_train ryota$ cd a/c/d
+hamaiyurikonoMacBook-puro:d ryota$ cd ../../../
+.DS_Store  a/         b/
+hamaiyurikonoMacBook-puro:d ryota$ cd ../../../b
+hamaiyurikonoMacBook-puro:b ryota$ cd ../
+hamaiyurikonoMacBook-puro:git_train ryota$ ls
+a	b
+hamaiyurikonoMacBook-puro:git_train ryota$ ls -a
+.		..		.DS_Store	a		b
+hamaiyurikonoMacBook-puro:git_train ryota$ git init
+xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+hamaiyurikonoMacBook-puro:git_train ryota$ git -v
+xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+hamaiyurikonoMacBook-puro:git_train ryota$ xcode-select --install
+xcode-select: note: install requested for command line developer tools
+hamaiyurikonoMacBook-puro:git_train ryota$ xcode-select --install
+xcode-select: note: install requested for command line developer tools
+hamaiyurikonoMacBook-puro:git_train ryota$ git init
+Initialized empty Git repository in /Users/ryota/Desktop/git_train/.git/
+hamaiyurikonoMacBook-puro:git_train ryota$ ls -a
+.		.DS_Store	a
+..		.git		b
+hamaiyurikonoMacBook-puro:git_train ryota$ cd .git
+hamaiyurikonoMacBook-puro:.git ryota$ cd ..
+hamaiyurikonoMacBook-puro:git_train ryota$ git init
+Reinitialized existing Git repository in /Users/ryota/Desktop/git_train/.git/
+hamaiyurikonoMacBook-puro:git_train ryota$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+hamaiyurikonoMacBook-puro:git_train ryota$ touch sample.txt
+hamaiyurikonoMacBook-puro:git_train ryota$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	sample.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+hamaiyurikonoMacBook-puro:git_train ryota$ git add sample.txt
+hamaiyurikonoMacBook-puro:git_train ryota$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   sample.txt
+
+hamaiyurikonoMacBook-puro:git_train ryota$ git log
+fatal: your current branch 'master' does not have any commits yet
+hamaiyurikonoMacBook-puro:git_train ryota$ git commit
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <>) not allowed
+hamaiyurikonoMacBook-puro:git_train ryota$ git config --global user.email "densyu25@yahoo.co.jp"
+hamaiyurikonoMacBook-puro:git_train ryota$  git config --global user.name "ryota2"
+hamaiyurikonoMacBook-puro:git_train ryota$ git commit
+Aborting commit due to empty commit message.
+hamaiyurikonoMacBook-puro:git_train ryota$ git commit -m "intial commit"
+[master (root-commit) 88247ed] intial commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 sample.txt
+hamaiyurikonoMacBook-puro:git_train ryota$ git log
+commit 88247eda8f92caf5302daf3cc07aa9d2c74aebc1 (HEAD -> master)
+Author: ryota2 <densyu25@yahoo.co.jp>
+Date:   Sun Mar 10 10:04:45 2019 +0900
+
+    intial commit
+hamaiyurikonoMacBook-puro:git_train ryota$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   sample.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+hamaiyurikonoMacBook-puro:git_train ryota$ git diff
+diff --git a/sample.txt b/sample.txt
+index e69de29..3b7dd8b 100644
+--- a/sample.txt
++++ b/sample.txt
+@@ -0,0 +1,3 @@
++aa
++bb
++cc
+hamaiyurikonoMacBook-puro:git_train ryota$ git diff sample.txt
+diff --git a/sample.txt b/sample.txt
+index e69de29..3b7dd8b 100644
+--- a/sample.txt
++++ b/sample.txt
+@@ -0,0 +1,3 @@
++aa
++bb
++cc
+hamaiyurikonoMacBook-puro:git_train ryota$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   sample.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	text.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+hamaiyurikonoMacBook-puro:git_train ryota$ git add .
+hamaiyurikonoMacBook-puro:git_train ryota$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   sample.txt
+	new file:   text.txt
+
+hamaiyurikonoMacBook-puro:git_train ryota$ git commit -m "２回目"
+[master 4ca500f] ２回目
+ 2 files changed, 3 insertions(+)
+ create mode 100644 text.txt
+hamaiyurikonoMacBook-puro:git_train ryota$ git remote add origin https://github.com/ryotaham/git_train.git
+hamaiyurikonoMacBook-puro:git_train ryota$ git push -u origin master
+Username for 'https://github.com': ryotaham
+Password for 'https://ryotaham@github.com':
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (6/6), 470 bytes | 470.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To https://github.com/ryotaham/git_train.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+hamaiyurikonoMacBook-puro:git_train ryota$

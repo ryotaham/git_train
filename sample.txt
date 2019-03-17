@@ -1,3 +1,75 @@
-aa
-bb
-cc
+1  cd /Users/ryota/Desktop/lesson
+2  pwd
+3  cd../
+4  pwd
+5  cd ../
+6  pwd
+7  mkdir Lesson-cui
+8  cd lesson-cui
+9  pwd
+10  git init
+11  pwd
+12  git init
+13  pwd
+14  ls
+15  cd Desktop
+16  pwd
+17  ls
+18  mkdir git_train
+19  cd git_train/
+20  ls
+21  ls -a
+22  cd .
+23  cd ..
+24  ls
+25  cd ../Desktop/
+26  cd git_train/
+27  mkdir a
+28  mkdir b
+29  cd a
+30  cd c
+31  mkdir c
+32  cd c
+33  mkdir d
+34  cd d
+35  cd ..
+36  cd d
+37  cd ../../..
+38  cd a/c/d
+39  cd ../../../b
+40  cd ../
+41  ls
+42  ls -a
+43  git init
+44  git -v
+45  xcode-select --install
+46  xcode-select --install
+47  git init
+48  ls -a
+49  cd .git
+50  cd ..
+51  git init
+52  git status
+53  touch sample.txt
+54  git status
+55  git add sample.txt
+56  git status
+57  git log
+58  git commit
+59  git config --global user.email "densyu25@yahoo.co.jp"
+60   git config --global user.name "ryota2"
+61  git commit
+62  git commit -m "intial commit"
+63  git log
+64  git status
+65  git diff
+66  git diff sample.txt
+67  git status
+68  git add .
+69  git status
+70  git commit -m "２回目"
+71  git remote add origin https://github.com/ryotaham/git_train.git
+72  git push -u origin master
+73  history
+74  echo history >> sample.txt
+75  echo | history >> sample.txt
